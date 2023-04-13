@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>[v-cloak]{display: none;}</style>
     <script type="module">
+        import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.prod.js'
         import { municipalities } from './municipalities.js';
-        import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.js'
       
         console.log(municipalities)
 
@@ -25,7 +26,7 @@
     <div class="container">
         <h1>Hi plcm!</h1>
 
-        <div id="app" class="row">
+        <div id="app" class="row" v-cloak>
             <p v-text="message"></p>
         </div>
     </div>
