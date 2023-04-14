@@ -18,6 +18,11 @@
                         municipalities: municipalities,
                     }
                 },
+                computed: {
+                    getMunicipalitiesSorted() {
+                        return underscore.sortBy(this.municipalities, 'bocmDate');
+                    }
+                },
                 template: '#vue-app-template'
             }).mount('#app')
         </script>
@@ -41,7 +46,7 @@
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-                                <template v-for="m, i in municipalities" :key="i">
+                                <template v-for="m, i in getMunicipalitiesSorted" :key="i">
                                     <tr>
                                         <th scope="row">
                                             <img :src="m.coaImg" :alt="m.name" width="50">
