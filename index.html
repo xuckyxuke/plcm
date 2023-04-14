@@ -11,8 +11,6 @@
             import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.prod.js'
             import underscore from 'https://cdn.jsdelivr.net/npm/underscore@1/+esm'
             import { municipalities } from './municipalities.js';
-        
-            console.log(municipalities)
 
             createApp({
                 data() {
@@ -34,20 +32,20 @@
                             <caption>Listado de Procesos Selectivos</caption>
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th>Municipio</th>
-                                    <th>BOCM</th>
-                                    <th>Plazas</th>
-                                    <th>Pruebas</th>
-                                    <th></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Municipio</th>
+                                    <th scope="col">BOCM</th>
+                                    <th scope="col">Plazas</th>
+                                    <th scope="col">Pruebas</th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="table-group-divider">
                                 <template v-for="m, i in municipalities" :key="i">
                                     <tr>
-                                        <td>
+                                        <th scope="row">
                                             <img :src="m.coaImg" :alt="m.name" width="50">
-                                        </td>
+                                        </th>
                                         <td v-text="m.name"></td>
                                         <td v-text="m.bocmDate"></td>
                                         <td v-text="m.vacancies"></td>
@@ -58,7 +56,13 @@
                                                 </template>
                                             </ol>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            <ul>
+                                                <template v-for="l, j in m.links" :key="j">
+                                                    <li><a :href="l.url" v-text="l.name" target="_blank"></a></li>
+                                                </template>
+                                            </ul>
+                                        </td>
                                     </tr>
                                 </template>
                             </tbody>
