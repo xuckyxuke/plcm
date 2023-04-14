@@ -4,7 +4,7 @@ const municipalities = [
     {
         name: 'Coslada',
         bocmDate: '2022-08-24',
-        coaImg: '',
+        coaImg: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Escudo_de_Coslada.svg',
         vacancies: 8,
         links: [
             { name: '', url: '' },
@@ -14,7 +14,7 @@ const municipalities = [
     {
         name: 'Majadahonda',
         bocmDate: '2022-08-16',
-        coaImg: '',
+        coaImg: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Escudo_de_Majadahonda.svg',
         vacancies: 5,
         links: [
             { name: '', url: '' },
@@ -24,7 +24,7 @@ const municipalities = [
     {
         name: 'Fuenlabrada',
         bocmDate: '2022-07-29',
-        coaImg: '',
+        coaImg: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Escudo_de_Fuenlabrada.svg',
         vacancies: 8,
         links: [
             { name: '', url: '' },
