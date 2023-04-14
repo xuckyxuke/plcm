@@ -20,7 +20,9 @@
                 },
                 computed: {
                     getMunicipalitiesSorted() {
-                        return underscore.invert(underscore.sortBy(this.municipalities, 'bocmDate'));
+                        let m = underscore.sortBy(this.municipalities, 'bocmDate');
+                        
+                        return underscore.invert(m);
                     }
                 },
                 template: '#vue-app-template'
