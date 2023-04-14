@@ -9,6 +9,7 @@
         <style>[v-cloak]{display: none;}</style>
         <script type="module">
             import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3/dist/vue.esm-browser.prod.js'
+            import underscore from 'https://cdn.jsdelivr.net/npm/underscore@1/+esm'
             import { municipalities } from './municipalities.js';
         
             console.log(municipalities)
@@ -16,20 +17,47 @@
             createApp({
                 data() {
                     return {
-                        message: 'Hello Vue!'
+                        municipalities: municipalities,
                     }
-                }
+                },
+                template: '#vue-app-template'
             }).mount('#app')
         </script>
     </head>
     <body>
-        <div class="container">
-            <h1>Hi plcm!</h1>
-
-            <div id="app" class="row" v-cloak>
-                <p v-text="message"></p>
-                <input type="text" v-model="message">
-            </div>
+        <div id="app" class="container py-4">
+            
         </div>
+        <template id="vue-app-template">
+            <div class="row">
+                <div class="col">
+                    <table class="table align-middle caption-top">
+                        <caption>Listado de Procesos Selectivos</caption>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Municipio</th>
+                                <th>BOCM</th>
+                                <th>Plazas</th>
+                                <th>Pruebas</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template v-for="m, index in municipalities">
+                                <tr>
+                                    <td></td>
+                                    <td v-text="m.name"></td>
+                                    <td v-text="m.bocmDate"></td>
+                                    <td v-text="m.vacancies"></td>
+                                    <td v-text="'e'"></td>
+                                    <td></td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </template>
     </body>
 </html>
