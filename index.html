@@ -29,39 +29,41 @@
         <template id="vue-app-template">
             <div class="row">
                 <div class="col">
-                    <table class="table align-middle caption-top">
-                        <caption>Listado de Procesos Selectivos</caption>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Municipio</th>
-                                <th>BOCM</th>
-                                <th>Plazas</th>
-                                <th>Pruebas</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <template v-for="m, i in municipalities" :key="i">
+                    <div class="table-responsive">
+                        <table class="table align-middle caption-top">
+                            <caption>Listado de Procesos Selectivos</caption>
+                            <thead>
                                 <tr>
-                                    <td>
-                                        <img :src="m.coaImg" :alt="m.name" width="50">
-                                    </td>
-                                    <td v-text="m.name"></td>
-                                    <td v-text="m.bocmDate"></td>
-                                    <td v-text="m.vacancies"></td>
-                                    <td>
-                                        <ol>
-                                            <template v-for="t, j in m.tests" :key="j">
-                                                <li v-text="t"></li>
-                                            </template>
-                                        </ol>
-                                    </td>
-                                    <td></td>
+                                    <th></th>
+                                    <th>Municipio</th>
+                                    <th>BOCM</th>
+                                    <th>Plazas</th>
+                                    <th>Pruebas</th>
+                                    <th></th>
                                 </tr>
-                            </template>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <template v-for="m, i in municipalities" :key="i">
+                                    <tr>
+                                        <td>
+                                            <img :src="m.coaImg" :alt="m.name" width="50">
+                                        </td>
+                                        <td v-text="m.name"></td>
+                                        <td v-text="m.bocmDate"></td>
+                                        <td v-text="m.vacancies"></td>
+                                        <td>
+                                            <ol>
+                                                <template v-for="t, j in m.tests" :key="j">
+                                                    <li v-text="t"></li>
+                                                </template>
+                                            </ol>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </template>
