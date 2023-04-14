@@ -25,9 +25,7 @@
         </script>
     </head>
     <body>
-        <div id="app" class="container py-4">
-            
-        </div>
+        <div id="app" class="container py-4" v-cloak></div>
         <template id="vue-app-template">
             <div class="row">
                 <div class="col">
@@ -44,13 +42,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <template v-for="m, index in municipalities">
+                            <template v-for="m, i in municipalities" :key="i">
                                 <tr>
-                                    <td></td>
+                                    <td>
+                                        <img :src="m.coaImg" :alt="m.name" width="50">
+                                    </td>
                                     <td v-text="m.name"></td>
                                     <td v-text="m.bocmDate"></td>
                                     <td v-text="m.vacancies"></td>
-                                    <td v-text="'e'"></td>
+                                    <td>
+                                        <ol>
+                                            <template v-for="t, j in m.tests" :key="j">
+                                                <li v-text="t"></li>
+                                            </template>
+                                        </ol>
+                                    </td>
                                     <td></td>
                                 </tr>
                             </template>
