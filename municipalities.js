@@ -7,7 +7,7 @@ const municipalities = [
         coaImg: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Escudo_de_Coslada.svg',
         vacancies: 8,
         links: [
-            { name: '', url: '' },
+            { name: 'Bases', url: 'https://www.bocm.es/boletin/CM_Orden_BOCM/2022/08/24/BOCM-20220824-25.PDF' },
         ],
         tests: ['P', 'C', 'F'],
     },
