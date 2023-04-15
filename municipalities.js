@@ -2,6 +2,16 @@ export { municipalities };
 
 const municipalities = [
     {
+        name: '(AM) Madrid',
+        bocmDate: '2021-07-16',
+        coaImg: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Escudo_de_Madrid.svg',
+        vacancies: 22,
+        links: [
+            { name: 'Portal', url: 'https://www.madrid.es/portales/munimadrid/es/Inicio/Educacion-y-empleo/Empleo/Oposiciones/Buscador-de-oposiciones/Agentes-de-Movilidad-del-Ayuntamiento-de-Madrid/?vgnextfmt=default&vgnextoid=3fe27764ce3ca710VgnVCM2000001f4a900aRCRD&vgnextchannel=4ac5c5dee78fe410VgnVCM1000000b205a0aRCRD' },
+        ],
+        tests: [],
+    },
+    {
         name: 'Getafe',
         bocmDate: '2023-01-26',
         coaImg: 'https://upload.wikimedia.org/wikipedia/commons/2/26/Escudo_de_Getafe.svg',
